@@ -1,0 +1,4 @@
+
+.DS_Store
+# remove mysql data directory from repository
+data/
