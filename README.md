@@ -10,7 +10,8 @@ My dev environment tailored to laravel and php web dev projects - Docker, Nginx,
 4. add an entry in your hosts file that corresponds to the site created in step 3 (i.e. "127.0.0.1 docker.local")
 5. run `docker-compose up --build` in the ./container directory
 
-- mysql -u root -psecret -h 127.0.0.1
+- mysql -u root -psecret -h 127.0.0.1 from host computer
+- mysql -u root -psecret -h mysql from docker container (when setting up your web application the host is 'mysql' for the database container when accessed from the php docker container or the nginx container)
 - ./container/scripts/ contains script files to connect to containers php and mysql
 - your "web" directory from step 2 is the same as the /code directory in the php and nginx containers
 

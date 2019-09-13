@@ -14,8 +14,12 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo pdo_mysql \
     && docker-php-ext-install -j$(nproc) iconv \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd
+    && docker-php-ext-install -j$(nproc) gd \
+    && pecl install xdebug-2.7.2 
 
+
+# xdebug
+COPY mods-available/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 # cron
 COPY laravel-cron /etc/cron.d/laravel-cron
@@ -52,3 +56,5 @@ RUN touch /etc/crontab /etc/cron.*/*
 # CMD cron && tail -f /var/log/cron.log
 RUN cron
 CMD php-fpm
+
+WORKDIR "/code"
