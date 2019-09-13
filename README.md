@@ -22,8 +22,8 @@ My dev environment tailored to laravel and php web dev projects - Docker, Nginx,
 
 - [Docker](https://docs.docker.com)
 - [Nginx](https://docs.nginx.com)
-- [PHP-FPM](https://www.php.net/manual/en/install.fpm.php)
 - [MySQL](https://dev.mysql.com/doc/)
+- [PHP-FPM](https://www.php.net/manual/en/install.fpm.php)
 
 ## Contributing
 
