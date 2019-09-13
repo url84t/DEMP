@@ -1,0 +1,4 @@
+# project supporting documents
+## ignore all
+*
+!.gitignore
