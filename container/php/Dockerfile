@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
 
 
 # xdebug
-COPY mods-available/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+# COPY mods-available/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini  #using in docker-compose.yml  where changes do not require a --build
 
 # cron
 COPY laravel-cron /etc/cron.d/laravel-cron

@@ -23,6 +23,7 @@ services:
     container_name: php
     volumes:
       - ./php/:/usr/local/etc/php/php.ini
+      - ./php/mods-available:/usr/local/etc/php/conf.d
       - ../web:/code
       - ./learn:/learn
       - ./log/:/var/log/
