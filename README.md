@@ -15,6 +15,12 @@ My dev environment tailored to laravel and php web dev projects - Docker, Nginx,
 - ./container/scripts/ contains script files to connect to containers php and mysql
 - your "web" directory from step 2 is the same as the /code directory in the php and nginx containers
 
+### XDebug
+
+- set the xdebug.remotehost = <your machines ip address> in the ./container/php/mods-available/xdebug.ini file
+- set the fastcgi_param REMOTE_ADDR "<your machines ip address>"; in ./container/nginx/sites/site.conf (or your custom nginx vhost conf file)
+- in your IDE set the debugger listen port to 9001
+
 ### Prerequisites
 
 - [Install docker-compose](https://docs.docker.com/compose/install/)
