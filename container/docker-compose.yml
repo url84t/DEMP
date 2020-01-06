@@ -13,6 +13,7 @@ services:
       - ../web:/code
     links:
       - php
+      - node
     ports:
       - "80:80"
       - "443:443"
@@ -29,6 +30,7 @@ services:
       - ./log/:/var/log/
     links:
       - mysql
+      - node
     ports:
       - "9000:9000"
   mysql:
@@ -43,3 +45,14 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: secret
+  node:
+    build:
+      context: ./nodejs
+      dockerfile: Dockerfile
+    container_name: node
+    volumes:
+      - ../web:/code
+    links:
+      - mysql
+    ports:
+      - "3000:3000"
